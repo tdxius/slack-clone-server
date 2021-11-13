@@ -1,0 +1,11 @@
+{
+  "name": "slack-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Tadej <tadej.996@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "4",
+    "socket.io": "^4.3.2"
+  }
+}
