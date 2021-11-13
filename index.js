@@ -2,64 +2,7 @@ const express = require('express');
 const app = express();
 const { Server } = require("socket.io");
 
-const namespaces = [
-  {
-    icon: 'mdi-briefcase',
-    title: 'Work',
-    endpoint: '/work',
-    rooms: [
-      {
-        icon: 'mdi-briefcase',
-        title: 'Work 1',
-        slug: 'work-1',
-      },
-      {
-        icon: 'mdi-briefcase',
-        title: 'Work 2',
-        slug: 'work-2',
-      },
-      {
-        icon: 'mdi-briefcase',
-        title: 'Work 2',
-        slug: 'work-2',
-      },
-    ],
-  },
-  {
-    icon: 'mdi-linux',
-    title: 'Linux',
-    endpoint: '/linux',
-    rooms: [
-      {
-        icon: 'mdi-linux',
-        title: 'Linux 1',
-        slug: 'linux-1',
-      },
-      {
-        icon: 'mdi-linux',
-        title: 'Linux 2',
-        slug: 'linux-2',
-      },
-    ],
-  },
-  {
-    icon: 'mdi-human-male-female-child',
-    title: 'Family',
-    endpoint: '/family',
-    rooms: [
-      {
-        icon: 'mdi-human-male-female-child',
-        title: 'Family 1',
-        slug: 'family-1',
-      },
-      {
-        icon: 'mdi-human-male-female-child',
-        title: 'Family 2',
-        slug: 'family-2',
-      },
-    ],
-  },
-];
+const namespaces = require('./namespaces.json');
 
 const expressServer = app.listen(3001);
 const io = new Server(expressServer, {
