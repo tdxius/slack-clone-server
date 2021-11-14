@@ -29,11 +29,11 @@ io.on('connection', (socket) => {
 namespaces.forEach(namespace => {
   io.of(namespace.endpoint).on('connection', namespaceSocket => {
     console.log(`User ${namespaceSocket.id} connected to ${namespaceSocket.nsp.name}`);
-    namespaceSocket.on('message', (message) => {
+    namespaceSocket.on('message', ({ user, message }) => {
       console.log(`User ${namespaceSocket.id} in ${namespaceSocket.nsp.name} sent a message: ${message}`);
       const activeRoom = findActiveRoom(namespaceSocket, namespace)
       activeRoom.messages.push({
-        user: 'Jaka',
+        user,
         content: message,
       })
       io.of(namespace.endpoint).to(activeRoom.slug).emit('load:messages', activeRoom.messages)
