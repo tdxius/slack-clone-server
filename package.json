@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "Tadej <tadej.996@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
   "dependencies": {
     "express": "4",
     "socket.io": "^4.3.2"

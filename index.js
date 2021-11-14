@@ -17,12 +17,13 @@ const io = new Server(expressServer, {
   }
 });
 
-io.on('connection', (socket) => {
-  console.log(`User ${socket.id} connected to ${socket.nsp.name}`);
+io.on('connection', async (socket) => {
+  const connections = await io.fetchSockets();
+  console.log(`User ${socket.id} connected to ${socket.nsp.name}. Active connections ${connections.length}`);
 
   socket.emit('load:namespaces', namespaces)
   socket.on('disconnect', () => {
-    console.log('user disconnected');
+    console.log(`User ${socket.id} disconnected.`);
   });
 });
 
