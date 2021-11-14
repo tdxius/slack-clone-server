@@ -29,6 +29,7 @@ io.on('connection', (socket) => {
 namespaces.forEach(namespace => {
   io.of(namespace.endpoint).on('connection', namespaceSocket => {
     console.log(`User ${namespaceSocket.id} connected to ${namespaceSocket.nsp.name}`);
+
     namespaceSocket.on('message', ({ user, message }) => {
       console.log(`User ${namespaceSocket.id} in ${namespaceSocket.nsp.name} sent a message: ${message}`);
       const activeRoom = findActiveRoom(namespaceSocket, namespace)
@@ -38,6 +39,7 @@ namespaces.forEach(namespace => {
       })
       io.of(namespace.endpoint).to(activeRoom.slug).emit('load:messages', activeRoom.messages)
     })
+
     namespaceSocket.on('room:join', (room) => {
       console.log(`User ${namespaceSocket.id} in ${namespaceSocket.nsp.name} joined a room: ${room.slug}`);
       const activeRoom = findActiveRoom(namespaceSocket, namespace)
@@ -47,6 +49,7 @@ namespaces.forEach(namespace => {
 
       namespaceSocket.join(room.slug)
     })
+
     namespaceSocket.emit('load:rooms', namespace.rooms)
   })
 })
