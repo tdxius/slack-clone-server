@@ -7,17 +7,20 @@
       {
         "icon": "mdi-briefcase",
         "title": "Work 1",
-        "slug": "work-1"
+        "slug": "work-1",
+        "messages": []
       },
       {
         "icon": "mdi-briefcase",
         "title": "Work 2",
-        "slug": "work-2"
+        "slug": "work-2",
+        "messages": []
       },
       {
         "icon": "mdi-briefcase",
         "title": "Work 2",
-        "slug": "work-2"
+        "slug": "work-2",
+        "messages": []
       }
     ]
   },
@@ -29,12 +32,14 @@
       {
         "icon": "mdi-linux",
         "title": "Linux 1",
-        "slug": "linux-1"
+        "slug": "linux-1",
+        "messages": []
       },
       {
         "icon": "mdi-linux",
         "title": "Linux 2",
-        "slug": "linux-2"
+        "slug": "linux-2",
+        "messages": []
       }
     ]
   },
@@ -46,7 +51,17 @@
       {
         "icon": "mdi-human-male-female-child",
         "title": "Family 1",
-        "slug": "family-1"
+        "slug": "family-1",
+        "messages": [
+          {
+            "user": "Jaka",
+            "content": "This is content"
+          },
+          {
+            "user": "Omaka",
+            "content": "This is content 2"
+          }
+        ]
       },
       {
         "icon": "mdi-human-male-female-child",
@@ -56,7 +71,8 @@
           {
             "user": "Blabla",
             "content": "This is content"
-          },{
+          },
+          {
             "user": "Blabla 11",
             "content": "This is content 2"
           }
