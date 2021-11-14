@@ -4,6 +4,7 @@ const { Server } = require("socket.io");
 
 const namespaces = require('./namespaces.json');
 
+
 const findActiveRoom = (namespaceSocket, namespace) => {
   const roomSlug = Array.from(namespaceSocket.rooms)[1]
   return namespace.rooms.find(room => room.slug === roomSlug)
