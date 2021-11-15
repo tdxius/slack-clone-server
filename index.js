@@ -8,8 +8,6 @@ const mongo = require('./mongo.js');
   const collection = db.collection('namespaces')
   const namespaces = await collection.find().toArray()
 
-  console.log(namespaces[0].rooms[0].messages)
-
   const findActiveRoom = (namespaceSocket, namespace) => {
     const roomSlug = Array.from(namespaceSocket.rooms)[1]
     return namespace.rooms.find(room => room.slug === roomSlug)

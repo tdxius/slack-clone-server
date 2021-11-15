@@ -18,7 +18,7 @@ const mongo = require('./mongo.js');
         return {
           icon: "mdi-briefcase",
           title: roomTitle,
-          slug: `/${faker.helpers.slugify(roomTitle).toLowerCase()}`,
+          slug: faker.helpers.slugify(roomTitle).toLowerCase(),
           messages: [...Array(Math.floor(Math.random() * 5) + 1)].map(() => ({
             user: faker.internet.userName(),
             content: faker.lorem.sentence(),
